@@ -30,7 +30,31 @@ export const phoneItemsSlice = createSlice({
       };
       state.accessories.push(newItem);
     },
+    increaseItem: (state, action) => {
+      const itemId = action.payload.id;
+      const item = state.accessories.find((item) => item.id === itemId);
+      item.count += 1;
+      state.amount += 1;
+      state.total += item.price;
+    },
+    decreaseItem: (state, action) => {
+      const itemId = action.payload.id;
+      const item = state.accessories.find((item) => item.id === itemId);
+      item.count -= 1;
+      state.total -= item.price;
+      state.amount -= 1;
+    },
+    removeItem: (state, action) => {
+      const itemId = action.payload.id;
+      const itemIndex = state.accessories.findIndex(
+        (item) => item.id === itemId
+      );
+
+      state.amount -= state.accessories[itemIndex].count;
+      state.accessories.splice(itemIndex, 1);
+    },
   },
 });
 
-export const { addToCart } = phoneItemsSlice.actions;
+export const { addToCart, increaseItem, decreaseItem, removeItem } =
+  phoneItemsSlice.actions;

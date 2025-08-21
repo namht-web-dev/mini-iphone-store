@@ -9,8 +9,8 @@ const Footer = () => {
       <div className="flex gap-4 mt-3">
         <Phone /> <span>Tel: 0984707504</span>
       </div>
-      <a href="https:google.com.vn" className="flex gap-4 mt-3">
-        <Www /> <span>Website: https:google.com.vn</span>
+      <a href="https:google.com.vn" target="_blank" className="flex gap-4 mt-3">
+        <Www /> <span>Website: namht.com.vn</span>
       </a>
     </footer>
   );
