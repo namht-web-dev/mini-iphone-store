@@ -21,9 +21,9 @@ const Cart = () => {
         <CartItem key={item.id} {...item} />
       ))}
       <Title text="Total" />
-      <div className="w-full border-t border-slate-300 mx-5">
-        <p className="p text-emerald-500 font-bold text-2xl">
-          {phoneItems.total.toFixed(2)}
+      <div className="w-full border-t border-slate-300">
+        <p className="p text-emerald-500 font-bold text-2xl px-3">
+          {phoneItems.total.toFixed(2)} $
         </p>
       </div>
     </section>

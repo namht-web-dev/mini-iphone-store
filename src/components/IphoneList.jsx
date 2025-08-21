@@ -6,7 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 const url = "https://dummyjson.com/products/search?q=iphone";
 
 const IphoneList = () => {
-  const { data, isLoading } = useQuery({
+  const { data, isLoading, isError } = useQuery({
     queryKey: ["iphone"],
     queryFn: async () => {
       const { data } = await axios.get(url);
@@ -16,6 +16,9 @@ const IphoneList = () => {
   });
   if (isLoading) {
     return <div className="text-center mt-5 italic">... Loading</div>;
+  }
+  if (isError) {
+    return <div className="text-center mt-5 italic">Server Error Now</div>;
   }
   return (
     <div className="px-5 mt-5 text-center">
