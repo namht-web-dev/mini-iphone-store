@@ -4,7 +4,7 @@ const cartInitialState = {
   accessories: [],
   amount: 0,
   total: 0,
-  isLoading: false,
+  // isLoading: false,
 };
 
 export const phoneItemsSlice = createSlice({
@@ -53,8 +53,18 @@ export const phoneItemsSlice = createSlice({
       state.amount -= state.accessories[itemIndex].count;
       state.accessories.splice(itemIndex, 1);
     },
+    clearAllItems: (state) => {
+      state.accessories = [];
+      state.amount = 0;
+      state.total = 0;
+    },
   },
 });
 
-export const { addToCart, increaseItem, decreaseItem, removeItem } =
-  phoneItemsSlice.actions;
+export const {
+  addToCart,
+  increaseItem,
+  decreaseItem,
+  removeItem,
+  clearAllItems,
+} = phoneItemsSlice.actions;

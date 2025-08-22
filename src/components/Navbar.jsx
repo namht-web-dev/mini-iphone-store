@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 const Navbar = () => {
   const { amount } = useSelector((state) => state.phoneItems);
   return (
-    <nav className="bg-emerald-500 p-5 flex items-center justify-between md:px-12 fixed w-full top-0 z-[10000]">
+    <nav className="bg-emerald-500 p-5 flex items-center justify-between md:px-12 fixed w-full top-0 z-[10]">
       <NavLink to="/" className="text-2xl font-bold text-slate-50">
         Logo
       </NavLink>

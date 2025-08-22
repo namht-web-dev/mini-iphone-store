@@ -2,7 +2,7 @@ import IphoneList from "../components/IphoneList";
 
 const Landing = () => {
   return (
-    <section className="mt-10">
+    <section>
       <IphoneList />
     </section>
   );
