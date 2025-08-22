@@ -13,7 +13,7 @@ const NotFound = () => {
       >
         back to home
       </Link>
-      <img className="w-3/4" src={notfound} alt="not-found" />
+      <img className="w-3/4 lg:w-1/2" src={notfound} alt="not-found" />
     </div>
   );
 };
