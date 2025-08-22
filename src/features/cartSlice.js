@@ -17,18 +17,17 @@ export const phoneItemsSlice = createSlice({
       state.total += price;
       const itemId = action.payload.id;
       const item = state.accessories.find((item) => item.id === itemId);
-      if (item) {
-        item.count += 1;
-        return;
+      if (item) item.count += 1;
+      else {
+        const newItem = {
+          id: itemId,
+          name: action.payload.name,
+          count: 1,
+          price: action.payload.price,
+          image: action.payload.thumbnail,
+        };
+        state.accessories.push(newItem);
       }
-      const newItem = {
-        id: itemId,
-        name: action.payload.name,
-        count: 1,
-        price: action.payload.price,
-        image: action.payload.thumbnail,
-      };
-      state.accessories.push(newItem);
     },
     increaseItem: (state, action) => {
       const itemId = action.payload.id;
